@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap');
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.selected {
+    outline: none;
+    border: 2px solid #4285f4;
+}
+
+.rated_on, .question_statment {
+    display: inline;
+}
+
+.rated_on {
+    right: 20px;
+    top: 0px;
+    position: absolute;
+    font-weight: 700;
+}
+
+body * {
+    font-family: "National Park", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.question_div {
+    position: relative;
+    margin: 30px;
+    background-color: #ebebeb;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+h3 {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    border-color:  white;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.question_div h3 {
+    margin-bottom: 20px;
+}
+
+#results {
+    display: none;
+    font-size: xx-large;
+}
+
+.answer_list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.answer_list button {
+    align-self: flex-start;
+    width: auto; 
+}
+
+#welcomeScreen {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#welcomeScreen div {
+    background-color: rgb(228, 228, 228);
+    padding: 40px 70px;
+    border-radius: 20px;
+}
