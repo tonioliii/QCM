@@ -1,84 +1,297 @@
-@import url('https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap');
-
 body {
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
 }
 
-.selected {
-    outline: none;
-    border: 2px solid #4285f4;
+h1 {
+  text-align: center;
 }
 
-.rated_on, .question_statment {
-    display: inline;
+.question {
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
-.rated_on {
-    right: 20px;
-    top: 0px;
-    position: absolute;
-    font-weight: 700;
+label {
+  display: block;
+  margin: 5px 0;
 }
 
-body * {
-    font-family: "National Park", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-}
-
-.question_div {
-    position: relative;
-    margin: 30px;
-    background-color: #ebebeb;
-    border-radius: 10px;
-    padding: 30px;
-}
-
-h3 {
-    margin: 0;
-    padding: 0;
+label.selected {
+  font-weight: bold;
 }
 
 button {
-    border-color:  white;
-    padding: 5px;
-    border-radius: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
 }
 
-.question_div h3 {
-    margin-bottom: 20px;
+button:hover {
+  background-color: #2980b9;
 }
 
-#results {
-    display: none;
-    font-size: xx-large;
+#result {
+  margin-top: 20px;
 }
 
-.answer_list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
+#stats {
+  background: #eaf2f8;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
 }
 
-.answer_list button {
-    align-self: flex-start;
-    width: auto; 
+.correction {
+  padding: 10px;
+  border-radius: 6px;
+  background-color: #e8f5e9;
+  margin-bottom: 10px;
 }
 
-#welcomeScreen {
+.wrong {
+  background-color: #fbe9e7;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.correct-row {
+  background-color: #82e0aa;
+}
+
+.incorrect-row {
+  background-color: #f1948a;
+}
+
+.summary-row {
+  background-color: transparent !important;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+.welcome {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.welcome button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+}
+
+#result,
+#stats,
+#graphique {
+  display: none;
+}
+
+.question {
+  position: relative;
+  padding-top: 40px;
+}
+
+.question-header {
+  position: relative;
+}
+
+.hint-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.9em;
+  padding: 4px 8px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hint-button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+  button {
     width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-bottom: 10px;
+  }
 }
 
-#welcomeScreen div {
-    background-color: rgb(228, 228, 228);
-    padding: 40px 70px;
-    border-radius: 20px;
+.fixed-timer {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: #f4f4f4;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-weight: bold;
+  z-index: 1000;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  display: none;
+}
+
+#result {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+
+
+
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+/* Champs de formulaire en mode sombre */
+.dark-mode input,
+.dark-mode select,
+.dark-mode textarea {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+.dark-mode label {
+  color: #fff;
+}
+
+/* Mode sombre */
+body.dark-mode #welcomeScreen,
+body.dark-mode #result,
+body.dark-mode #stats {
+  background-color: #2c2c2c;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+body.dark-mode #qcmContainer {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: none !important; /* Supprime toute bordure */
+  box-shadow: none !important; /* Supprime tout effet de cadre ombré */
+}
+
+body.dark-mode #qcmContainer .question {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+/* Accentuation des boutons radio et cases à cocher */
+body.dark-mode input[type="radio"],
+body.dark-mode input[type="checkbox"] {
+  accent-color: #00bfff;
+}
+
+/* Boutons en mode sombre (jaune foncé par défaut + survol jaune clair) */
+body.dark-mode button {
+  background-color: #f1c40f;  /* Jaune foncé par défaut */
+  color: black;
+  border: 1px solid #ccc;
+}
+
+body.dark-mode button:hover {
+  background-color: #ffeb3b;  /* Jaune clair au survol */
+}
+
+body.dark-mode canvas {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 10px;
+}
+
+body.dark-mode #result {
+  background-color: #2c2c2c;
+}
+
+body.dark-mode .fixed-timer {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+
+/* Transitions fluides pour tous les éléments importants */
+#welcomeScreen,
+#qcmContainer,
+#result,
+#stats,
+.question,
+label,
+input,
+select,
+textarea,
+button,
+body {
+  transition: background-color 0.6s ease, color 0.6s ease, border-color 0.6s ease;
+}
+
+
+/* Pour afficher les corrections */
+.correction {
+  background-color: #e0f0e0;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* Correction correcte */
+.correction:not(.wrong) {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+/* Correction incorrecte */
+.correction.wrong {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Mode sombre : correction correcte */
+body.dark-mode .correction:not(.wrong) {
+  background-color: #1f3b1f;
+  color: #cce8cc;
+}
+
+/* Mode sombre : correction incorrecte */
+body.dark-mode .correction.wrong {
+  background-color: #5a1f24;
+  color: #f0cccc;
 }
