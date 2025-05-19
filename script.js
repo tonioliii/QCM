@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     h3.textContent = q.question;
 
     const indiceBtn = document.createElement("button");
-    indiceBtn.textContent = "💡 Indice";
+    indiceBtn.textContent = "💡 Indice (par hugo)";
     indiceBtn.className = "indice-btn";
     indiceBtn.type = "button";
     indiceBtn.onclick = () => {
